@@ -1,4 +1,5 @@
 import React from 'react';
+import Work from './Work';
 import '../styles/App.scss';
 
 class App extends React.Component {
@@ -9,47 +10,57 @@ class App extends React.Component {
   render() {
     return (
 <main className="main">
+  <Work
+    coverClass="first-proyect-image image"
+    descriptionClass="first-project-description description"
+    projectImage="./assets/images/ab-favicon.png"
+    projectTitle="Anonymous Proxy"
+    projectDescription="Responsive design project"
+    projectSkills="HTML | SASS | JS | GULP"
+    projectCode="https://github.com/angelabenavente/Anonymous-proxy"
+    projectWeb="http://beta.adalab.es/evaluacion-final-modulo-1-angelabenavente/"
+  />
+  <Work
+    coverClass="second-proyect-image image"
+    descriptionClass="second-project-description description"
+    projectImage="./assets/images/ab-favicon.png"
+    projectTitle="Awesome Profile Cards"
+    projectDescription="App to generare and share proffesional cards"
+    projectSkills="REACT | APIs | SASS | JS | GULP"
+    projectCode="https://github.com/angelabenavente/Awesome-profile-cards"
+    projectWeb="http://beta.adalab.es/project-promo-h-module-2-team-2-afternoon/"
+  />
+  <Work
+    coverClass="third-proyect-image image"
+    descriptionClass="third-project-description description"
+    projectImage="./assets/images/ab-favicon.png"
+    projectTitle="Dice Pig Game"
+    projectDescription="Dice game for two"
+    projectSkills="HTML | CSS | JS"
+    projectCode="https://angelabenavente.github.io/DicePigGame/"
+    projectWeb="https://github.com/angelabenavente/DicePigGame"
+  />
+  <Work
+    coverClass="fourth-proyect-image image"
+    descriptionClass="fourth-project-description description"
+    projectImage="./assets/images/ab-favicon.png"
+    projectTitle="Contact us!"
+    projectDescription="Web for contact work teams"
+    projectSkills="HTML | CSS | JS | GULP"
+    projectCode="https://github.com/Adalab/project-promo-h-module-1-team-2-afternoon-sprint-2-"
+    projectWeb="http://beta.adalab.es/project-promo-h-module-1-team-2-afternoon-sprint-2-/"
+  />
+  <Work
+    coverClass="fifth-proyect-image image"
+    descriptionClass="fifth-project-description"
+    projectImage="./assets/images/ab-favicon.png"
+    projectTitle="Series around the world"
+    projectDescription="Series in all the world, filter by rating and save in favorites"
+    projectSkills="SASS | JS | API | LocalStore"
+    projectCode="https://github.com/angelabenavente/search-tv-series"
+    projectWeb="https://angelabenavente.github.io/search-tv-series/"
+  />
   
-  <section id="work" className="main__work">
-    <p id="carousel" className="carousel">
-      <span id="arrowNavigationWorks" className="arrowNavigationWorks">
-        <i className="fas fa-angle-left"></i>
-      </span>
-      <span id="worksNavigationPosition" className="carousel-content">
-        <i id="firstProjectPosition" className="fas fa-circle"></i>
-        <i id="secondProjectPosition" className="far fa-circle"></i>
-        <i id="thirdProjectPosition" className="far fa-circle"></i>
-        <i id="fourthProjectPosition" className="far fa-circle"></i>
-      </span>
-      <span id="arrowNavigationWorksNext" className="arrowNavigationWorksNext">
-        <i className="fas fa-angle-right"></i>
-      </span>
-    </p>
-
-    <div id="first-project" className="first-proyect proyect">
-      <div id="project-image" className="first-proyect-image image"></div>
-
-      <div id="project-description" className="first-proyect-description description">
-        <div className="textWorks">
-          <h3 className="projectTitle" id="projectTitle">Anonymous Proxy</h3>
-          <p id="projectDescription">Responsive design project</p>
-          <p id="projectSkills">HTML | SASS | JS | GULP</p>
-          <div className="linksInfoProject">
-            <button className="seeMore-button">
-              <a id="seePlaceLink" href="#" target="_blank">Visit place</a>
-          </button>
-          <button className="seeMore-button">
-            <a id="seeCodeLink" href="#" target="_blank">See code</a>
-          </button>
-        </div>
-        <p className="nextSectionButton">
-          <a href="#about">{}</a>
-        </p>
-      </div>
-    </div>
-    </div>
-  </section>
-
   <section id="about" className="main__aboutMe">
     <div className="main__aboutMe__cover">
       <h2>About</h2>
