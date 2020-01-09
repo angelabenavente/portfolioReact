@@ -1,0 +1,225 @@
+@keyframes notShow {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    bottom:0;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    top: -60vh;
+    width: 100vw;
+    height: 0vh;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin { 
+  0% {
+      opacity: 0;
+      transform: rotate(0deg); 
+  }
+  3% {
+    opacity: 1;
+  }
+  100% { 
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes showJob {
+  0%{
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height:23px;
+  }
+}
+
+.hero {
+  height: 100vh;
+  width: 100vw;
+  padding: 0 25px;
+  background-color: #070707;
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  -webkit-animation: notShow 1s ease-in-out;
+  animation: notShow 1s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 5.4s;
+  
+&__background {
+  width: 60vw;
+  position: absolute;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 60s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;}  
+}
+
+.intro {
+  bottom: -50px; 
+  position: absolute;
+  -webkit-animation: intro 3s ease-in-out;
+  animation: intro 3s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
+
+
+/////////////
+svg.intro {
+  width: 95%;
+  max-width: 800px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: #0c0c0c;
+  -webkit-animation: intro 3s ease-in-out;
+  animation: intro 3s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  @include tablet {
+    top: 45%;
+  }
+  
+  .text { 
+    display: none;
+  }
+
+  &.go {
+    background-color: transparent;
+    .text {
+      display: block;
+      font-family: 'Cuprum', sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    
+    .text-stroke {
+      stroke-width: 2.5px;
+      stroke-dashoffset: -900;
+      stroke-dasharray: 900;
+      fill: none;
+      stroke: white;
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+      animation: dash 1.8s ease-in-out forwards;
+    }
+    .text-stroke:nth-child(2) {
+      animation-delay: .2s;
+    }
+    .text-stroke:nth-child(3) {
+      animation-delay: .8s;
+    }
+    .text-stroke-2 {
+      stroke: #f6bdfa;
+      animation-delay: 5.1s;
+    }
+    .text-stroke-2 {
+      stroke: white;
+      animation-delay: 2.1s;
+    }
+    .text-stroke:nth-child(5) {
+      animation-delay: 2.1s;
+    }
+    .text-stroke:nth-child(6) {
+      animation-delay: 2.7s;
+    }
+  }
+}
+
+.reload {
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+  border: none;
+  border-radius: 20px;
+  outline: none!important;
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: #fff;
+  box-shadow: 0 6px 7px #350e4c;
+  transition: all .1s cubic-bezier(.67, .13, .1, .81);
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 4px 4px #350e4c;
+    transform: translateY(1px);
+  }
+  &:active {
+    box-shadow: 0 1px 2px #244B94;
+    transform: translateY(2px);
+  }
+  svg {
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+  }
+}
+
+.job {
+  height: 23px;
+  padding: 14px;
+  position: absolute;
+  bottom: 41%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cuprum', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: right;
+  opacity: 0;
+  -webkit-animation: showJob 2s ease-in-out;
+  animation: showJob 2s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.8s;
+  @include mobileMedium {
+    bottom: 36%;
+  }
+  @include mobilePlus {
+    bottom: 32%;
+  }
+
+  @include tabletMin {
+    bottom: 28%;
+  }
+
+  @include tablet {
+    bottom: 20%;
+  }
+}
