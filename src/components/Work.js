@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/App.scss';
+import '../images/firstProjectImage.jpg';
+import '../images/firstWorkImage.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,8 +28,8 @@ class App extends React.Component {
       </span>
     </p>
 
-    <div id="first-project" className="first-proyect proyect">
-      <div id="project-image" className={this.props.coverClass} image></div>
+    <div id="first-project" className="first-project project">
+      <div id="project-image" className={this.props.coverClass}></div>
 
       <div id="project-description" className={this.props.descriptionClass}>
         <div className="textWorks">

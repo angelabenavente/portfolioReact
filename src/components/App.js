@@ -1,17 +1,44 @@
 import React from 'react';
 import Work from './Work';
+import Hero from './Hero';
+import Header from './Header';
+import Accordion from './Accordion';
+import AccordionItem from './AccordionItem';
+import Bootcamp from './Bootcamp';
+import Master from './Master';
+import Grade from './Grade';
+import Courses from './Courses';
 import '../styles/App.scss';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      accordionOpen: ''
+    }
+    this.handleOpenAccordion = this.handleOpenAccordion.bind(this)
+  }
+
+  handleOpenAccordion = (name) => {
+    if (this.state.accordionOpen === name) {
+      this.setState({
+        accordionOpen: ''
+      });
+    } else {
+      this.setState({
+        accordionOpen: name
+      });
+    }
   }
 
   render() {
+    const accordionOpen = this.state.accordionOpen;
     return (
 <main className="main">
+  <Hero/>
+  <Header/>
   <Work
-    coverClass="first-proyect-image image"
+    coverClass="first-project-image image"
     descriptionClass="first-project-description description"
     projectImage="./assets/images/ab-favicon.png"
     projectTitle="Anonymous Proxy"
@@ -21,7 +48,7 @@ class App extends React.Component {
     projectWeb="http://beta.adalab.es/evaluacion-final-modulo-1-angelabenavente/"
   />
   <Work
-    coverClass="second-proyect-image image"
+    coverClass="second-project-image image"
     descriptionClass="second-project-description description"
     projectImage="./assets/images/ab-favicon.png"
     projectTitle="Awesome Profile Cards"
@@ -31,7 +58,7 @@ class App extends React.Component {
     projectWeb="http://beta.adalab.es/project-promo-h-module-2-team-2-afternoon/"
   />
   <Work
-    coverClass="third-proyect-image image"
+    coverClass="third-project-image image"
     descriptionClass="third-project-description description"
     projectImage="./assets/images/ab-favicon.png"
     projectTitle="Dice Pig Game"
@@ -41,7 +68,7 @@ class App extends React.Component {
     projectWeb="https://github.com/angelabenavente/DicePigGame"
   />
   <Work
-    coverClass="fourth-proyect-image image"
+    coverClass="fourth-project-image image"
     descriptionClass="fourth-project-description description"
     projectImage="./assets/images/ab-favicon.png"
     projectTitle="Contact us!"
@@ -51,7 +78,7 @@ class App extends React.Component {
     projectWeb="http://beta.adalab.es/project-promo-h-module-1-team-2-afternoon-sprint-2-/"
   />
   <Work
-    coverClass="fifth-proyect-image image"
+    coverClass="fifth-project-image image"
     descriptionClass="fifth-project-description"
     projectImage="./assets/images/ab-favicon.png"
     projectTitle="Series around the world"
@@ -73,109 +100,29 @@ class App extends React.Component {
   
       <section className="main__aboutMe__content--formation">
         <h2 className="heading-secondary">What's my formation?</h2>
-        <div className="main__aboutMe__content--formation--box">
-          <div id="js-toggle" className="bootcamp-view">
-            <div className="view-left">
-              <div className="studiesWrapper">
-                <p className="formation__bootcamp--title">FrontEnd development Bootcamp</p>
-                <span className="study-place">in Adalab</span>
-              </div>
-            </div>
-          <div className="formation__bootcamp--arrow">
-            <span>
-              <i className="bootcamp-arrow-button fas fa-chevron-down"></i>
-            </span>
-          </div>
-        </div>
-        <div className="view-hidden hidden" id="toggle">
-          <ul>
-            <li>- HTML5 | CSS3 | SASS.</li>
-            <li>- Responsive design.</li>
-            <li>- Development: JavaScript next | Node.</li>
-            <li>- Frameworks: React.</li>
-            <li>- Versions control: Git | Github.</li>
-            <li>- Task runner: Gulp.</li>
-            <li>- Dependency management: NPM.</li>
-            <li>- Scrum & Agile philoshopy.</li>      
-          </ul>
-        </div>
-      </div>
-      <div className="main__aboutMe__content--formation--box">
-        <div className="master__header-container">
-          <div className="master__header">
-            <div className="studiesWrapper">
-              <p className="master__title">Web and Ghaphic Design Master</p>
-              <span className="study-place">in AZPE</span>
-            </div>
-          </div>
-          <div className="button-form">
-            <span>
-              <i className="arrow-button-form fas fa-chevron-down"></i>
-            </span>
-          </div>
-        </div>
-        <form className="master__form hidden" action="" method="post">
-          <ul>
-            <li>- Web development.</li>
-            <li>- Wordpress</li>
-            <li>- Graphic design: Ps, Ia, Id</li>
-            <li>- Digital marketing: SEO/SEM tools.</li>
-            <li>- Community Manager functions.</li>     
-          </ul>
-        </form>
-      </div>
-  
-      <div className="main__aboutMe__content--formation--box">
-        <div className="formation__grade">
-          <div className="formation-container">
-            <div className="studiesWrapper">
-              <p className="title">Languages & Communication Grade</p>
-              <span className="study-place">in Universidad Autónoma de Madrid</span>
-            </div>
-            <div className="button-form">
-              <span>
-                <i className="arrow-button-share fas fa-chevron-down"></i>
-              </span>
-            </div>
-          </div>
-          <div id="formation-button-section" className="validateInputsSection hidden">
-            <ul>
-              <li>- Communication techniques. </li>
-              <li>- Trading and Mediation.</li>
-              <li>- Digital editing, Design and Layout.</li>
-              <li>- Audiovisual analysis.</li>
-              <li>- Branding.</li>
-              <li>- Translation.</li>
-              <li>- French (C1). English (B2).</li>
-              <li>- Mandarin Chinese (HSK3)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <div className="main__aboutMe__content--formation--box">
-        <div id="js-toggle-courses" className="courses-view">
-          <div className="view-left">
-            <div className="studiesWrapper">
-              <p className="formation__courses--title">Especialize courses</p>
-              <span className="study-place">Self-learning</span>
-            </div>
-          </div>
-          <div className="formation__courses--arrow">
-            <span>
-              <i className="courses-arrow-button fas fa-chevron-down"></i>
-            </span>
-          </div>
-        </div>
-        <div className="view-hidden hidden" id="toggle-courses">
-          <ul>
-            <li>- Complete JavaScript (45h). Udemy</li>
-            <li>- Advanced CSS and Sass (28h). Udemy</li>   
-            <li>- Digital Marketing (24h). IAB</li>
-            <li>- Team Building (12h). UAM</li>   
-          </ul>
-        </div>
-      </div>
+        <Accordion>
+          <AccordionItem name="Bootcamp" title="FrontEnd development Bootcamp" icon="far fa-object-ungroup" span="in Adalab" handleOpenAccordion={this.handleOpenAccordion}  openName={accordionOpen}>
+            <Bootcamp />
+        </AccordionItem>
+        </Accordion>
+        <Accordion>
+          <AccordionItem name="Master" title="Web and Ghaphic Design Master" icon="far fa-object-ungroup" span="in Azpe" handleOpenAccordion={this.handleOpenAccordion}  openName={accordionOpen}>
+            <Master />
+        </AccordionItem>
+        </Accordion>
+
+        <Accordion>
+          <AccordionItem name="Grade" title="Languages & Communication Grade" icon="far fa-object-ungroup" span="in Universidad Autónoma de Madrid" handleOpenAccordion={this.handleOpenAccordion}  openName={accordionOpen}>
+            <Grade />
+        </AccordionItem>
+        </Accordion>
+
+        <Accordion>
+          <AccordionItem name="Courses" title="Especialize courses" icon="far fa-object-ungroup" span="self-learning" handleOpenAccordion={this.handleOpenAccordion}  openName={accordionOpen}>
+            <Courses />
+        </AccordionItem>
+        </Accordion>
+        
     </section>
   
     <section className="main__skills">
