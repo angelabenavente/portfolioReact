@@ -1,9 +1,14 @@
 import React from 'react';
+import Media from 'react-media';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
 
   render() {
+    console.log(this.props.onTop)
     return (
   
       <header className="header">
@@ -12,7 +17,7 @@ class Header extends React.Component {
     
         <div className="navigation header__navigation">
           <input type="checkbox" className="navigation__checkbox" id="navi-toggle"/>
-          <label htmlFor="navi-toggle" id="navigation__button" className="navigation__button">
+          <label htmlFor="navi-toggle" id="navigation__button" className="navigation__button" style={(this.props.onTop === "about") ? {backgroundColor : "#252525"}: (this.props.onTop === "firstWork") ? {backgroundColor : "#2a4d68"} : {backgroundColor : "green"} }>
             <p className="navigation__icon">&nbsp;</p>
           </label>
           <div id="navigation-background" className="navigation__background">&nbsp;</div>
@@ -39,8 +44,20 @@ class Header extends React.Component {
         </div>
     
         <div className="header__logo">
-          <span id="author" >AB | </span>
-          <span className="pageCategory">projects</span>
+          <Media queries={{
+            small: "(max-width: 599px)",
+            medium: "(min-width: 600px) and (max-width: 1199px)",
+            large: "(min-width: 1200px)"
+          }}>
+            {matches => (
+              <React.Fragment>
+                {matches.small && <span id="author" >AB | </span>}
+                {matches.medium && <span id="author" >Ángela Benavente | </span>}
+                {matches.large && <span id="author" >Ángela Benavente | </span>}
+              </React.Fragment>
+            )}
+        </Media>
+          <span className="pageCategory">{(this.props.onTop === "about") ? "about" : "projects"}</span>
         </div>
       </div>
       <div id="contactLinksHeader" className="header__logo-aboutMe">

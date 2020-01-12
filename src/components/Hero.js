@@ -1,4 +1,5 @@
 import React from 'react';
+import polygonBackground from '../images/heroPolygonBackground.png'
 
 class Hero extends React.Component {
 
@@ -6,25 +7,24 @@ class Hero extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div id="home" class="hero background">
-  <img class="hero__background" src="/assets/images/heroPolygonBackground.png"/>
-  
-  <svg class="intro" viewbox="0 0 200 86">
-    <text text-anchor="start" x="10" y="30" class="text text-stroke" clip-path="url(#text1)">Ángela</text>
-    <text text-anchor="start" x="10" y="50" class="text text-stroke" clip-path="url(#text2)">Benavente</text>
-    <text text-anchor="start" x="10" y="70" class="text text-stroke" clip-path="url(#text3)">______________________________</text>
-    <text text-anchor="start" x="10" y="30" class="text text-stroke text-stroke-2" clip-path="url(#text1)">Ángela</text>
-    <text text-anchor="start" x="10" y="50" class="text text-stroke text-stroke-2" clip-path="url(#text2)">Benavente</text>
-    <text text-anchor="start" x="10" y="70" class="text text-stroke text-stroke-2" clip-path="url(#text3)">______________________________</text>
+      <div id="home" className="hero background">
+  <img className="hero__background" src={polygonBackground}/>
+  <svg className="intro" viewBox="0 0 200 86">
+    <text textAnchor="start" x="10" y="30" className="text text-stroke" clipPath="url(#text1)">Ángela</text>
+    <text textAnchor="start" x="10" y="50" className="text text-stroke" clipPath="url(#text2)">Benavente</text>
+    <text textAnchor="start" x="10" y="70" className="text text-stroke" clipPath="url(#text3)">______________________________</text>
+    <text textAnchor="start" x="10" y="30" className="text text-stroke text-stroke-2" clipPath="url(#text1)">Ángela</text>
+    <text textAnchor="start" x="10" y="50" className="text text-stroke text-stroke-2" clipPath="url(#text2)">Benavente</text>
+    <text textAnchor="start" x="10" y="70" className="text text-stroke text-stroke-2" clipPath="url(#text3)">______________________________</text>
     <defs>
       <clipPath id="text1">
-        <text text-anchor="start" x="10" y="30" class="text">Ángela</text>
+        <text textAnchor="start" x="10" y="30" className="text">Ángela</text>
       </clipPath>
       <clipPath id="text2">
-        <text text-anchor="start" x="10" y="50" class="text">Benavente</text>
+        <text textAnchor="start" x="10" y="50" className="text">Benavente</text>
       </clipPath>
       <clipPath id="text3">
-        <text text-anchor="start" x="10" y="70" class="text">______________________________</text>
+        <text textAnchor="start" x="10" y="70" className="text">______________________________</text>
       </clipPath>
     </defs>
   </svg>
@@ -34,7 +34,7 @@ class Hero extends React.Component {
       </div>
       </div>
   <div>
-    <p class="job">Frontend Developer</p>
+    <p className="job">Frontend Developer</p>
   </div>
 
 

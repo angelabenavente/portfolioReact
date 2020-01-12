@@ -15,9 +15,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      accordionOpen: ''
+      accordionOpen: '', 
+      onTop: '',
     }
+    this.firstWorkRef = React.createRef();
+    this.aboutRef = React.createRef();
+
     this.handleOpenAccordion = this.handleOpenAccordion.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   handleOpenAccordion = (name) => {
@@ -32,28 +37,57 @@ class App extends React.Component {
     }
   }
 
+
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const firstWorkYPos =  this.aboutRef.current.getBoundingClientRect().top;
+    const aboutYPos =  this.aboutRef.current.getBoundingClientRect().top;
+
+    if(Math.sign(firstWorkYPos) === 0 || Math.sign(firstWorkYPos) === -1){
+      this.setState({
+        onTop: "firstWork"
+      });
+      console.log(firstWorkYPos)
+   }
   
+   if (Math.sign(aboutYPos) === 0 || Math.sign(aboutYPos) === -1) {
+    this.setState({
+      onTop: "about"
+    });
+  } else{
+    this.setState({
+      onTop: ""
+    });
+  }
+    
+    
+  }  
+
   render() {
     const accordionOpen = this.state.accordionOpen;
+    console.log(this.state.onTop);
     return (
 <main className="main">
   <Hero/>
-  <Header/>
+  <Header onTop={this.state.onTop}/>
   <div id="carousel" className="carousel">
       {/* <span id="arrowNavigationWorks" className="arrowNavigationWorks">
         <i className="fas fa-angle-left"></i>
       </span> */}
       <span id="worksNavigationPosition" className="carousel-content">
-        <i id="firstProjectPosition" className="fas fa-circle"></i>
-        <i id="secondProjectPosition" className="far fa-circle"></i>
-        <i id="thirdProjectPosition" className="far fa-circle"></i>
-        <i id="fourthProjectPosition" className="far fa-circle"></i>
+        <i id="firstProjectPosition" className="fas fa-circle selected"></i>
+        <i id="secondProjectPosition" className="fas fa-circle no-selected"></i>
+        <i id="thirdProjectPosition" className="fas fa-circle no-selected"></i>
+        <i id="fourthProjectPosition" className="fas fa-circle no-selected"></i>
       </span>
       {/* <span id="arrowNavigationWorksNext" className="arrowNavigationWorksNext">
         <i className="fas fa-angle-right"></i>
       </span> */}
     </div>
-  <Work
+  <Work ref={this.firstWorkRef}
     coverClass="first-project-image image"
     descriptionClass="first-project-description description"
     //projectImage={proxyCover}
@@ -104,7 +138,7 @@ class App extends React.Component {
     projectWeb="https://angelabenavente.github.io/search-tv-series/"
   />
    */}
-  <section id="about" className="main__aboutMe">
+  <section ref={this.aboutRef} id="about" className="main__aboutMe">
     <div className="main__aboutMe__cover">
       <h2>About</h2>
     </div>
