@@ -60,7 +60,7 @@ class Header extends React.Component {
           <span className="pageCategory">{(this.props.onTop === "about") ? "about" : "projects"}</span>
         </div>
       </div>
-      <div id="contactLinksHeader" className="header__logo-aboutMe">
+      <div id="contactLinksHeader" className="header__logo-aboutMe" style={(this.props.onTop === "about") ? {backgroundColor : "#252525e8"}: (this.props.onTop === "firstWork") ? {backgroundColor : "#2a4d68e8"} : {backgroundColor : "#1a3446e8"} }>
         <div className="contactLink contact-button">
           <a href="https://www.linkedin.com/in/%C3%A1ngela-benavente-almaz%C3%A1n-436003174/" className="btn-text" target="_blank">
             <i className="social-icon fab fa-linkedin"></i>

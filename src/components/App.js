@@ -73,7 +73,7 @@ class App extends React.Component {
 <main className="main">
   <Hero/>
   <Header onTop={this.state.onTop}/>
-  <div id="carousel" className="carousel">
+  <div id="carousel" className="carousel" style={(this.state.onTop === "about") ? {display : "none"}: {display : "flex"} }>
       {/* <span id="arrowNavigationWorks" className="arrowNavigationWorks">
         <i className="fas fa-angle-left"></i>
       </span> */}
