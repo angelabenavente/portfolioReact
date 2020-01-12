@@ -9,6 +9,7 @@ import Master from './Master';
 import Grade from './Grade';
 import Courses from './Courses';
 import '../styles/App.scss';
+import proxyCover from '../images/firstProjectImage.jpg';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,16 +32,31 @@ class App extends React.Component {
     }
   }
 
+  
   render() {
     const accordionOpen = this.state.accordionOpen;
     return (
 <main className="main">
   <Hero/>
   <Header/>
+  <div id="carousel" className="carousel">
+      {/* <span id="arrowNavigationWorks" className="arrowNavigationWorks">
+        <i className="fas fa-angle-left"></i>
+      </span> */}
+      <span id="worksNavigationPosition" className="carousel-content">
+        <i id="firstProjectPosition" className="fas fa-circle"></i>
+        <i id="secondProjectPosition" className="far fa-circle"></i>
+        <i id="thirdProjectPosition" className="far fa-circle"></i>
+        <i id="fourthProjectPosition" className="far fa-circle"></i>
+      </span>
+      {/* <span id="arrowNavigationWorksNext" className="arrowNavigationWorksNext">
+        <i className="fas fa-angle-right"></i>
+      </span> */}
+    </div>
   <Work
     coverClass="first-project-image image"
     descriptionClass="first-project-description description"
-    projectImage="./assets/images/ab-favicon.png"
+    //projectImage={proxyCover}
     projectTitle="Anonymous Proxy"
     projectDescription="Responsive design project"
     projectSkills="HTML | SASS | JS | GULP"
@@ -77,7 +93,7 @@ class App extends React.Component {
     projectCode="https://github.com/Adalab/project-promo-h-module-1-team-2-afternoon-sprint-2-"
     projectWeb="http://beta.adalab.es/project-promo-h-module-1-team-2-afternoon-sprint-2-/"
   />
-  <Work
+  {/* <Work
     coverClass="fifth-project-image image"
     descriptionClass="fifth-project-description"
     projectImage="./assets/images/ab-favicon.png"
@@ -87,7 +103,7 @@ class App extends React.Component {
     projectCode="https://github.com/angelabenavente/search-tv-series"
     projectWeb="https://angelabenavente.github.io/search-tv-series/"
   />
-  
+   */}
   <section id="about" className="main__aboutMe">
     <div className="main__aboutMe__cover">
       <h2>About</h2>

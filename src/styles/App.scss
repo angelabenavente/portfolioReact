@@ -5,6 +5,7 @@
 @import 'vendors/normalize';
 
 
+
 //////////animations/////////
 @keyframes moveInLeft {
   0% {
@@ -378,13 +379,13 @@ body {
           background-color: #252525;
 
           .carousel{
-            width: 100%;
-            height: 40px;
+            width: 20px;
+            height: 100vh;
             padding: 0 24px;
             margin: auto;
-            top: 46.4vh;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             position: absolute;
             color: white;
             text-align: center;
@@ -396,14 +397,16 @@ body {
             }
 
             .carousel-content{
-              padding: 25px;
-              padding-top: 7.15px;
+              width: 35px;
+              padding: 7.15px;
               z-index: 2;
+              display: flex;
+              flex-direction: column;
               border: 1.2px solid white;
               border-radius: 18px;
               background-color: #2a4d68e8;
               @include tablet{
-                padding-top: 5.15px;
+                //padding-top: 5.15px;
               }
             }
 
@@ -445,17 +448,21 @@ body {
         }
     }
             .fas.fa-circle {
-              margin-left: 10px;
-              margin-right: 10px;
+              // margin-left: 10px;
+              // margin-right: 10px;
+              padding-top: 7px;
+              padding-bottom: 7px;
               position: relative;
-              top: -1.2px;
+              //top: -1.2px;
               cursor: pointer;
               font-size: 13px;
               text-shadow: 1.5px 1px 1.5px #191a1b;
             }
             .far{
-              margin-left: 10px;
-              margin-right: 10px;
+              // margin-left: 10px;
+              // margin-right: 10px;
+              padding-top: 7px;
+              padding-bottom: 7px;
               position: relative;
               top: -1.4px;
               font-size: 9px;
@@ -524,8 +531,8 @@ body {
               flex-direction: column;
               align-items: center;
               text-align: center;
-              background-image: url('/images/firstWorkImage.png');
-              background-size: contain;
+             background-image: url(../images/firstWorkImage.png);
+              background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
               color: white;
@@ -577,7 +584,7 @@ body {
           height: 50vh;
           z-index:1;
           background-color: #173d31;
-          background-image: url('/images/proxyCover.jpg');
+          background-image: url(../images/proxyCover.jpg);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -598,8 +605,7 @@ body {
         }
           }
 
-          .second-project{
-            &-description{
+            .second-project-description{
               height: 50vh;
               padding: 0 34px;
               display: flex;
@@ -607,8 +613,8 @@ body {
               flex-direction: column;
               align-items: center;
               text-align: center;
-              background-image: url('/images/firstWorkImage.png');
-              background-size: contain;
+              background-image: url(../images/secondWorkImage.png);
+              background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
               color: white;
@@ -660,7 +666,7 @@ body {
         .second-project-image{
           height: 50vh;
           z-index:1;
-          background-image: url('/assets/images/proxyCover.jpg');
+          background-image: url(../images/CardsImageCover.jpg);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -679,10 +685,9 @@ body {
             }
           }
         }
-          }
+          
 
-          .third-project{
-            &-description{
+            .third-project-description{
               height: 50vh;
               padding: 0 34px;
               display: flex;
@@ -690,7 +695,7 @@ body {
               flex-direction: column;
               align-items: center;
               text-align: center;
-              background-image: url('/assets/images/firstWorkImage.png');
+              background-image: url(../images/thirdWorkImage.png);
               background-size: contain;
               background-repeat: no-repeat;
               background-position: center;
@@ -743,7 +748,7 @@ body {
         .third-project-image{
           height: 50vh;
           z-index:1;
-          background-image: url('/assets/images/proxyCover.jpg');
+          background-image: url(../images/diceGameCover.jpg);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -762,10 +767,9 @@ body {
             }
           }
         }
-          }
+          
 
-          .fourth-project{
-            &-description{
+            .fourth-project-description{
               height: 50vh;
               padding: 0 34px;
               display: flex;
@@ -773,7 +777,7 @@ body {
               flex-direction: column;
               align-items: center;
               text-align: center;
-              background-image: url('/assets/images/firstWorkImage.png');
+              background-image: url(../images/fourthWorkImage.png);
               background-size: contain;
               background-repeat: no-repeat;
               background-position: center;
@@ -826,7 +830,7 @@ body {
         .fourth-project-image{
           height: 50vh;
           z-index:1;
-          background-image: url('/assets/images/proxyCover.jpg');
+          background-image: url(../images/fourthProjectCover.jpg);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -845,7 +849,7 @@ body {
             }
           }
         }
-          }
+          
 
           .fifth-project{
             &-description{
