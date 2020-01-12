@@ -17,10 +17,10 @@ class Header extends React.Component {
     
         <div className="navigation header__navigation">
           <input type="checkbox" className="navigation__checkbox" id="navi-toggle"/>
-          <label htmlFor="navi-toggle" id="navigation__button" className="navigation__button" style={(this.props.onTop === "about") ? {backgroundColor : "#252525"}: (this.props.onTop === "firstWork") ? {backgroundColor : "#2a4d68"} : {backgroundColor : "green"} }>
+          <label htmlFor="navi-toggle" id="navigation__button" className="navigation__button" style={(this.props.onTop === "about") ? {backgroundColor : "#252525"}: (this.props.onTop === "firstWork") ? {backgroundColor : "#2a4d68"} : {backgroundColor : "#1a3446"} }>
             <p className="navigation__icon">&nbsp;</p>
           </label>
-          <div id="navigation-background" className="navigation__background">&nbsp;</div>
+          <div id="navigation-background" className="navigation__background" style={(this.props.onTop === "about") ? {backgroundColor : "#252525"}: (this.props.onTop === "firstWork") ? {backgroundColor : "#2a4d68"} : {backgroundColor : "#1a3446"} }>&nbsp;</div>
     
           <nav className="navigation__nav">
             <ul className="navigation__list">
